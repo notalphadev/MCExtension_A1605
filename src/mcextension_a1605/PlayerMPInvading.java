@@ -15,7 +15,7 @@ public class PlayerMPInvading extends PlayerMPAlt {
 
 
     public static void OnShadowPlayerJoin(ExtWorld world, String name){
-        ExtWorld.PrintToChatGlobal(name + " joined");
+        //ExtWorld.PrintToChatGlobal(name + " joined");
         world.AddPlayer(name, false);
     }
 }
