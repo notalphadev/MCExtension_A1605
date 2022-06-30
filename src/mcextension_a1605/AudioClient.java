@@ -38,6 +38,9 @@ public class AudioClient extends EnvNetClientBase {
             int hubResult = ExtMain.hubClient.ConnectAudio();
             if (hubResult == -1){
                 System.out.println("can't connect to hub audio");
+                while (!ExtMain.hubClient.AudioConnected()){
+                    ExtMain.hubClient.ConnectAudio();
+                }
                 //TODO: the first try often fails, retry until it doesn't
 
             }

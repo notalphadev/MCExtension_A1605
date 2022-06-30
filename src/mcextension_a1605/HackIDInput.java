@@ -22,15 +22,11 @@ public class HackIDInput {
         if (currentID != ""){
             PrintText("[Use numpad to enter, - to clear, + to give]", 2, 10, 0xfaff6e);
             PrintText("Give item: " + currentID, 2, 20, 0xfaff6e);
-            try {
-                    int a = Integer.parseInt(currentID);
-                    if (Block.blocks.length <= a || Block.blocks[a] == null
-                    || Item.items[a] == null) {
-                            throw new Exception();
-                    }
-            } catch (Exception e) {
-                PrintText("(INVALID)", 2, 30, 0xff0000)
-            }
+                int a = Integer.parseInt(currentID);
+                if ((Block.blocks.length <= a || Block.blocks[a] == null)
+                && (Item.items.length <= a || Item.items[a] == null)) {
+                    PrintText("(INVALID)", 2, 30, 0xff0000)
+                }
         }
     }
 
@@ -44,7 +40,7 @@ public class HackIDInput {
             System.out.println("Current entered ID: " + currentID)
         }
         else if (Keyboard.getEventKey() == 81) {
-            
+
         }
     }
 }
