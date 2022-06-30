@@ -1,0 +1,48 @@
+mcextension_a1605
+    ExtMain:
+        CanPlayOnline() boolean
+            - No Javadoc
+            "public static boolean CanPlayOnline()"
+        authClient AuthClient
+        hubClient HubSyncClient
+        LogInAndGetKey(AuthClient cl) void
+        LogInUsingDevKey(AuthClient cl) void
+        class
+
+    AudioClient :: ExtNetClientBase
+        AddAudioData(byte[] audio)
+        AttemptReconnect()
+        GetNextData() : byte[]
+        ReceiveAudio() : byte[]
+        WorldChanged(ExtWorld worldIn)
+        netAudioData: List<byte[]>
+
+    HubSyncClient
+        AudioConnected() boolean
+            - No Javadoc
+            "public boolean AudioConnected()"
+        SpawnHubDoor(World world) boolean
+        equals(Object obj) boolean
+        --
+        ConnectAudio() int
+        ConnectToHubWorld() RemoteWorld
+        DisconnectAudio() void
+        GetChatPermission(Player player) ExtChatPermission
+        GetHubPlayerCount() int
+        GetHubPlayers() PlayerMPAlt[]
+        GetServerWorldTargets() NetResult
+        GetTargetWorld(BlockIronDoorTransport a) RemoteWorld
+        getClass() Class<?>
+        hashCode() int
+        notify() void
+        notifyAll() void
+        toString() String
+        wait() void
+    
+    HackIDInput
+        EventKeyboard()
+        OnUI()
+        PlayerSpawnBlock(Block a, int c)
+        PlayerSpawnItem(Item a, int c)
+        PrintText(String a, int x, int y, int color)
+        currentID : String
